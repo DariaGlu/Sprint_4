@@ -12,6 +12,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.praktikum.model.MainPageSamokat;
 import ru.yandex.praktikum.model.OrderPageSamokat;
 
+import static ru.yandex.praktikum.model.MainPageSamokat.HEADER_ORDER_BUTTON;
+import static ru.yandex.praktikum.model.MainPageSamokat.HOME_ORDER_BUTTON;
+import static ru.yandex.praktikum.model.OrderPageSamokat.BLACK_COLOR;
+import static ru.yandex.praktikum.model.OrderPageSamokat.GREY_COLOR;
+
 @RunWith(Parameterized.class)
 public class NewOrderCreationTest {
     private final By orderButton;
@@ -43,12 +48,12 @@ public class NewOrderCreationTest {
     @Parameterized.Parameters
     public static Object[][] getData() {
         return new Object[][]{
-                {By.cssSelector(".Button_Button__ra12g"),
+                {HEADER_ORDER_BUTTON,
                         "Мария", "Иванова", "пр. Вернадского, д. 10", "Проспект Вернадского", "+79310021340",
-                        "31.01.2023", "сутки", By.id("black"), "Привет, дорогой ревьювер!"},
-                {By.cssSelector(".Home_FinishButton__1_cWm"),
+                        "31.01.2023", "сутки", BLACK_COLOR, "Привет, дорогой ревьювер!"},
+                {HOME_ORDER_BUTTON,
                         "Галя", "Хренова", "ул. Широкая, д. 9к1", "Медведково", "89211234556",
-                        "18.03.2023", "семеро суток", By.id("grey"), "Надеюсь, мой код рабочий и красивый"},
+                        "18.03.2023", "семеро суток", GREY_COLOR, "Надеюсь, мой код рабочий и красивый"},
         };
     }
 
@@ -62,7 +67,7 @@ public class NewOrderCreationTest {
     }
 
     @Test
-    public void CreateNewOrderTest() {
+    public void createNewOrderTest() {
         MainPageSamokat mainPage = new MainPageSamokat(driver);
         mainPage.open()
                 .scrollToOrderButton(orderButton)

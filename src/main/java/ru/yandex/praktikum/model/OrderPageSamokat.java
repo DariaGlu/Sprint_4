@@ -18,6 +18,8 @@ public class OrderPageSamokat {
     private static final By NEXT_BUTTON = By.cssSelector(".Button_Button__ra12g.Button_Middle__1CSJM");
     private static final By DATE_INPUT = By.xpath(".//input[@placeholder='* Когда привезти самокат']");
     private static final By RENTAL_PERIOD_INPUT = By.className("Dropdown-control");
+    public static final By BLACK_COLOR = By.id("black");
+    public static final By GREY_COLOR = By.id("grey");
     private static final By COMMENT_INPUT = By.xpath(".//input[@placeholder='Комментарий для курьера']");
     private static final By CREATE_ORDER_BUTTON = By.xpath(".//button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
     private static final By YES_BUTTON = By.xpath(".//div[@class='Order_Modal__YZ-d3']/div[@class='Order_Buttons__1xGrp']/button[@class='Button_Button__ra12g Button_Middle__1CSJM']");
